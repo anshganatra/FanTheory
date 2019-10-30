@@ -7,13 +7,13 @@ Out in this Digital World, where e-commerce is at a boom, all the Pop Culture Fa
 - Provide a one-stop platform selling merchandise from all the various pop cultures
 - Making the world of superheroes accessible to their fingertips
 
-![image-20191030110903959](https://drive.google.com/open?id=1yID5p8bYzzYrBLwd4yIKHr_H93iz5KHZ)
+![image](https://drive.google.com/open?id=1yID5p8bYzzYrBLwd4yIKHr_H93iz5KHZ)
 
-![image-20191030110937719](https://drive.google.com/open?id=19KxrtJUTANhfy4dLlwY90WOTdiHFsw0X)
+![image](https://drive.google.com/open?id=19KxrtJUTANhfy4dLlwY90WOTdiHFsw0X)
 
-![image-20191030111025054](https://drive.google.com/open?id=1ggmWRXUlNHafvQcjBJfvyU6TwQMnxHLX)
+![image](https://drive.google.com/open?id=1ggmWRXUlNHafvQcjBJfvyU6TwQMnxHLX)
 
-![image-20191030111135218](https://drive.google.com/open?id=1JAbvQTst4VmhQdR0PIhlAJWC02CsHY9t)
+![image](https://drive.google.com/open?id=1JAbvQTst4VmhQdR0PIhlAJWC02CsHY9t)
 
 #### Future Scope
 
