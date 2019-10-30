@@ -13,9 +13,7 @@ include("functions.php");?>
       </div>
     </div>
 
-
-    <!-- <div class="row"> -->
-    <div class="site-section" align="center">      <!-- 14 to 187-->
+    <div class="site-section" align="center">  
       <div class="container"> 
 
           <div class="col-md-6 mb-5 mb-md-0">
@@ -43,8 +41,6 @@ include("functions.php");?>
 
             </div>
           </div>
-        <!-- </div> -->
-        <!-- </form> -->
       </div>
     </div>
 
@@ -67,13 +63,6 @@ include("functions.php");?>
           echo "<script>alert('Password or email is incorrect, plz try again!')</script>";
           exit();
           }
-          // else{
-          //   $_SESSION['customer_email']=$c_email; 
-            
-          //   echo "<script>alert('You logged in successfully, Thanks!')</script>";
-          //   echo "<script>window.open('checkout.php','_self')</script>";
-          // }
-
           $ip = getIp(); 
           
           $sel_cart = "select * from cart where ip_add='$ip'";

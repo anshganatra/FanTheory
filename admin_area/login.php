@@ -56,17 +56,6 @@ include("includes/db.php");
 	
 	
 	}
-	
-	
-	
-	
-	
-
-
-
-
-
-
 
 
 ?>

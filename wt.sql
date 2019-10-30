@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2019 at 03:45 AM
+-- Generation Time: Oct 30, 2019 at 05:34 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -54,13 +54,6 @@ CREATE TABLE `cart` (
   `qty` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
-(2, '::1', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -77,10 +70,9 @@ CREATE TABLE `catalogues` (
 --
 
 INSERT INTO `catalogues` (`cat_id`, `catalog`) VALUES
-(1, 't_shirts'),
-(2, 'caps'),
-(3, 'shoes'),
-(4, 'keychains_pendants');
+(1, 'Round Neck Tee'),
+(4, 'Stickers'),
+(5, 'Laptop Skins');
 
 -- --------------------------------------------------------
 
@@ -101,6 +93,13 @@ CREATE TABLE `customers` (
   `c_pass` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`c_ip`, `c_country`, `c_first_name`, `c_last_name`, `c_address`, `c_state`, `c_zip`, `c_email`, `c_phone`, `c_pass`) VALUES
+('::1', 'India', 'John', 'Doe', '221B Baker Street', 'MAHARASHTRA', '424242', 'john@doe.com', '9869696969', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -118,8 +117,8 @@ CREATE TABLE `genre` (
 --
 
 INSERT INTO `genre` (`movie_id`, `movie_name`, `movie_cat`) VALUES
-(1, 'marvel', 'movie'),
-(2, 'harry potter', 'movie'),
+(1, 'Marvel', 'movie'),
+(2, 'Harry Potter', 'movie'),
 (3, 'DC', 'movie'),
 (4, 'Dragon Ball Z', 'tv show'),
 (5, 'GOT', 'tv show'),
@@ -146,13 +145,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`pro_id`, `pro_genre`, `pro_catalog`, `pro_title`, `pro_price`, `pro_image`, `pro_desc`) VALUES
-(1, 'marvel', 't_shirts', 'marvtee', 20, 'prod_2.png', 'This is very good T-Shirt.'),
-(2, 'harry potter', 'caps', 'Blue Shoe High Heels', 28, 'prod_3.png', 'This is a magical Cap.'),
-(3, 'harry potter', 't_shirts', 'Denim Jacket', 28, 'model_5.png', 'This suits well to everyone.'),
-(4, 'DC', 'keychains_pendants', 'Leather Green Bag', 28, 'prod_1.png', 'This is an awesome product.'),
-(5, 'GOT', 't_shirts', 'Smooth Cloth', 28, 'model_1.png', 'This is a must have merch for a GOT fan. #ValarMorghulis.'),
-(6, 'The Flash', 'caps', 'Yellow Jacket', 58, 'model_7.png', 'This is just epic.'),
-(7, 'DC', 't_shirts', 'arkham tee', 58.66, 'prod_2.png', 'Most cool DC Merch one can have.');
+(27, 'DC', 'Round Neck Tee', 'Batman Tee', 52, '1546673676_DC_ClassicLogo_Tshirt_FontMockup.jpg', 'This is a perfect brand for Batman fans.'),
+(28, 'Dragon Ball Z', 'Round Neck Tee', 'DBZ Tee', 45, 'dragon-ball-z-goku-t-shirt-india-700x700.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia'),
+(29, 'The Flash', 'Round Neck Tee', 'Flash Tee', 33, '1546674879_DC_JL_TheFlashLogo_Tshirt_FrontMockup.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia'),
+(30, 'The Flash', 'Round Neck Tee', 'Flash Tee', 33, '1546674879_DC_JL_TheFlashLogo_Tshirt_FrontMockup.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia'),
+(31, 'GOT', 'Round Neck Tee', 'GOT Tee', 46, '20190225165324-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia'),
+(32, 'Harry Potter', 'Round Neck Tee', 'Harry Potter Hogwards Tee', 56, '20190125155647-2.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia'),
+(33, 'Marvel', 'Round Neck Tee', 'Marvel Tee', 66, '20191010161919-1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus posuere aliquam. Nullam ornare augue et justo posuere, id volutpat diam lobortis. Pellentesque varius lacinia');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +201,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `catalogues`
 --
 ALTER TABLE `catalogues`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `genre`
@@ -214,7 +213,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `pro_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pro_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

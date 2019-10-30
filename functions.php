@@ -52,7 +52,6 @@ function getPro(){
 
     global $con; 
     
-    // $get_pro = "select * from products order by RAND() LIMIT 0,6";
     $get_pro = "select * from products";
 
     $run_pro = mysqli_query($con, $get_pro); 
@@ -77,24 +76,6 @@ function getPro(){
 
         ";
     
-        // echo "
-        //         <div id='single_product'>
-                
-        //             <h3>$pro_title</h3>
-                    
-        //             <img src='admin_area/product_images/$pro_image' width='180' height='180' />
-                    
-        //             <p><b> Price: $ $pro_price </b></p>
-                    
-        //             <a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-                    
-        //             <a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
-                
-        //         </div>
-        
-        
-        // ";
-    
     }
     }
 }
@@ -114,10 +95,6 @@ function getMoviePro(){
     $get_pro = "select * from products where pro_genre = '$movie_name';";
 
     $run_pro = mysqli_query($con, $get_pro);
-    // if (!$run_pro) {
-    //     printf("Error: %s\n", mysqli_error($con));
-    //     exit();
-    // } 
     
     while($row_pro=mysqli_fetch_array($run_pro)){
     
@@ -138,24 +115,6 @@ function getMoviePro(){
             </div>
 
         ";
-    
-        // echo "
-        //         <div id='single_product'>
-                
-        //             <h3>$pro_title</h3>
-                    
-        //             <img src='admin_area/product_images/$pro_image' width='180' height='180' />
-                    
-        //             <p><b> Price: $ $pro_price </b></p>
-                    
-        //             <a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-                    
-        //             <a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
-                
-        //         </div>
-        
-        
-        // ";
     
     }
     
@@ -174,10 +133,6 @@ function getTVShowPro(){
     $get_pro = "select * from products where pro_genre = '$series_name';";
 
     $run_pro = mysqli_query($con, $get_pro);
-    // if (!$run_pro) {
-    //     printf("Error: %s\n", mysqli_error($con));
-    //     exit();
-    // } 
     
     while($row_pro=mysqli_fetch_array($run_pro)){
     
@@ -198,24 +153,6 @@ function getTVShowPro(){
             </div>
 
         ";
-    
-        // echo "
-        //         <div id='single_product'>
-                
-        //             <h3>$pro_title</h3>
-                    
-        //             <img src='admin_area/product_images/$pro_image' width='180' height='180' />
-                    
-        //             <p><b> Price: $ $pro_price </b></p>
-                    
-        //             <a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-                    
-        //             <a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
-                
-        //         </div>
-        
-        
-        // ";
     
     }
     
@@ -234,10 +171,6 @@ function getCatPro(){
     $get_pro = "select * from products where pro_catalog = '$cat_name'";
 
     $run_pro = mysqli_query($con, $get_pro);
-    // if (!$run_pro) {
-    //     printf("Error: %s\n", mysqli_error($con));
-    //     exit();
-    // } 
     
     while($row_pro=mysqli_fetch_array($run_pro)){
     
@@ -258,24 +191,6 @@ function getCatPro(){
             </div>
 
         ";
-    
-        // echo "
-        //         <div id='single_product'>
-                
-        //             <h3>$pro_title</h3>
-                    
-        //             <img src='admin_area/product_images/$pro_image' width='180' height='180' />
-                    
-        //             <p><b> Price: $ $pro_price </b></p>
-                    
-        //             <a href='details.php?pro_id=$pro_id' style='float:left;'>Details</a>
-                    
-        //             <a href='index.php?add_cart=$pro_id'><button style='float:right'>Add to Cart</button></a>
-                
-        //         </div>
-        
-        
-        // ";
     
     }
     
@@ -309,10 +224,7 @@ if(isset($_GET['deleteitem'])){
     $pro_id = $_GET['deleteitem'];
     $delete_pro = "delete from cart where p_id='$pro_id'";
     $run_delete = mysqli_query($con, $delete_pro);
-    // if($run_delete){
-    //     // echo "<script>window.open('cart.php','_self')</script>";
-    //     cart();
-    // }
+
   }
 
 if(isset($_GET['addcart'])){
@@ -337,15 +249,12 @@ if(isset($_GET['addcart'])){
       $insert_pro = "insert into cart values ('$p_id','$ip',1)";
       
       $run_pro = mysqli_query($con, $insert_pro); 
-      
-      // echo "<script>window.open('index.php','_self')</script>";
 
       }      
       
   }
 
     global $con; 
-    // $ip = getIp();
 
   $display_cart = "select * from cart";
   $run_display_cart = mysqli_query($con, $display_cart);
@@ -354,16 +263,10 @@ if(isset($_GET['addcart'])){
 
       $pro_id = $row_display['p_id'];
       $pro_qty = $row_display['qty'];
-      // $qty = $pro_qty;
       $product_info = "select * from products where pro_id = '$pro_id'";
       $run_product_info = mysqli_query($con, $product_info);
-
-      // while($row_product_info = mysqli_fetch_array($run_product_info)){
       $row_product_info = mysqli_fetch_array($run_product_info);
 
-      // $pro_id = $row_product_info['pro_id'];
-      // $pro_genre = $row_product_info['pro_genre'];
-      // $pro_catalog = $row_product_info['pro_catalog'];
       $pro_title = $row_product_info['pro_title'];
       $pro_price = $row_product_info['pro_price'];
       $pro_image = $row_product_info['pro_image'];
@@ -376,9 +279,6 @@ if(isset($_GET['addcart'])){
         $ip = getIp();
         $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id' and ip_add='$ip'");
         $pro_qty = $qty;
-
-        // $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id'");
-        // unset($_POST['pqty']);
       } 
 
       $sub_total = $pro_price * $pro_qty;
@@ -427,73 +327,10 @@ if(isset($_GET['addcart'])){
         $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id' and ip_add='$ip'");
         $pro_qty = $qty;
 
-        // $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id'");
-        // unset($_POST['pqty']);
       } 
-    
-    // if(isset($_POST['pqty'])){
-    //     $qty = $_POST['pqty'];
-    //     $update_qty = mysqli_query($con, "update cart set qty='$qty'");
-    //     // $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id'");
-    //     // unset($_POST['pqty']);
-    //   }   
-
-      // if(isset($_POST['pqty'])){
-        
-      // }
-
-        
-  // }
 
   }
 
-        // NOT WORKING
-        if(isset($_POST['updatecart'])){
-                global $con;
-                $ip = getIp();
-                $qty = $_POST[$name_for_qty];
-                // $name_for_qty = 'a'.$pro_id;
-
-                $run_cart_update = mysqli_query($con, "select * from cart where ip_add='$ip'");
-                while($row_run_cart_update=mysqli_fetch_array($run_cart_update)){
-                    global $con;
-                    // $ip = getIp();
-                    $p_id_up = $row_run_cart_update['p_id'];
-                    $name_for_qty1 = 'a'.$p_id_up;
-                    $qty = $_POST[$name_for_qty1];
-                    $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id='$p_id_up'");
-                  //   $run_pro_update = mysqli_query($con, "select pro_image from products where pro_id = '$p_id_up'");
-                  //   while($row_pro_update = mysqli_fetch_array($run_pro_update)){
-                  //   $qty = $_POST[$row_pro_update['pro_image']];
-                  //   $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id='$p_id_up'");
-                  // // }
-                  // }   
-                }
-
-             
-
-        }
-
-
 }
-
-
-// function delete_cart(){
-//     if(isset($_GET['deleteitem'])){
-    
-//     global $con; 
-//     $ip = getIp();
-//     $pro_id = $_GET['deleteitem'];
-//     $delete_pro = "delete from cart where p_id='$pro_id'";
-//     $run_delete = mysqli_query($con, $delete_pro);
-//     // if($run_delete){
-//     //     // echo "<script>window.open('cart.php','_self')</script>";
-//     //     cart();
-//     // }
-//   }
-// }
-
-
-
 
 ?>

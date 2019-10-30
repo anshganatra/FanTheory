@@ -7,13 +7,17 @@ Out in this Digital World, where e-commerce is at a boom, all the Pop Culture Fa
 - Provide a one-stop platform selling merchandise from all the various pop cultures
 - Making the world of superheroes accessible to their fingertips
 
-![image](https://github.com/anshganatra/FanTheory/blob/master/images/old/image-20191030110903959.png)
+![image-20191030110903959](C:\Users\acer\AppData\Roaming\Typora\typora-user-images\image-20191030110903959.png)
 
-![image](https://github.com/anshganatra/FanTheory/blob/master/images/old/image-20191030110937719.png)
 
-![image](https://github.com/anshganatra/FanTheory/blob/master/images/old/image-20191030111025054.png)
 
-![image](https://github.com/anshganatra/FanTheory/blob/master/images/old/image-20191030111135218.png)
+![image-20191030110937719](C:\Users\acer\AppData\Roaming\Typora\typora-user-images\image-20191030110937719.png)
+
+![image-20191030111025054](C:\Users\acer\AppData\Roaming\Typora\typora-user-images\image-20191030111025054.png)
+
+
+
+![image-20191030111135218](C:\Users\acer\AppData\Roaming\Typora\typora-user-images\image-20191030111135218.png)
 
 #### Future Scope
 

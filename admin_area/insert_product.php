@@ -9,14 +9,9 @@ include("includes/db.php");
 	<head>
 		<title>Inserting Product</title> 
 		
-<!-- <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
-<script>
-        tinymce.init({selector:'textarea'});
-</script> -->
 	</head>
 	
 <body bgcolor="skyblue">
-
 
 	<form action="insert_product.php" method="post" enctype="multipart/form-data"> 
 		
@@ -72,7 +67,6 @@ include("includes/db.php");
 					
 					echo "<option value='$movie_name'>$movie_name</option>";
 					
-					
 					}
 					
 					?>
@@ -97,36 +91,24 @@ include("includes/db.php");
 				<td><textarea name="product_desc" cols="20" rows="10"></textarea></td>
 			</tr>
 			
-			<!-- <tr>
-				<td align="right"><b>Product Keywords:</b></td>
-				<td><input type="text" name="product_keywords" size="50" required/></td>
-			</tr> -->
-			
 			<tr align="center">
 				<td colspan="7"><input type="submit" name="insert_post" value="Insert Product Now"/></td>
 			</tr>
 		
 		</table>
 	
-	
 	</form>
-
 
 </body> 
 </html>
 <?php 
 
 	if(isset($_POST['insert_post'])){
-	
-		//getting the text data from the fields
 		$product_title = $_POST['product_title'];
 		$product_cat= $_POST['product_cat'];
 		$product_gen = $_POST['product_gen'];
 		$product_price = $_POST['product_price'];
 		$product_desc = $_POST['product_desc'];
-		// $product_keywords = $_POST['product_keywords'];
-	
-		//getting the image from the field
 		$product_image = $_FILES['product_image']['name'];
 		$product_image_tmp = $_FILES['product_image']['tmp_name'];
 		
@@ -143,13 +125,6 @@ include("includes/db.php");
 		 
 		 }
 	}
-
-
-
-
-
-
-
 
 ?>
 

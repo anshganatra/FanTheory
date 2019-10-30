@@ -10,7 +10,6 @@
 		<th>S.N</th>
 		<th>Name</th>
 		<th>Email</th>
-		<!-- <th>Image</th> -->
 		<th>Delete</th>
 	</tr>
 	<?php 
@@ -27,7 +26,6 @@
 		$c_id = $row_c['c_email'];
 		$c_name = $row_c['c_first_name'];
 		$c_email = $row_c['c_email'];
-		// $c_image = $row_c['customer_image'];
 		$i++;
 	
 	?>
@@ -35,13 +33,9 @@
 		<td><?php echo $i;?></td>
 		<td><?php echo $c_name;?></td>
 		<td><?php echo $c_email;?></td>
-		<!-- <td><img src="../customer/customer_images/<?php echo $c_image;?>" width="50" height="50"/></td> -->
 		<td><a href="delete_c.php?delete_c=<?php echo $c_id;?>">Delete</a></td>
 	
 	</tr>
 	<?php } ?>
-
-
-
 
 </table>
