@@ -35,8 +35,150 @@ include("functions.php")
                 </thead>
                 <tbody>
 
-                  <?php cart();?>
+                  <form id="myform" method="post">
 
+                  <?php 
+
+                  if(isset($_GET['deleteitem'])){
+    
+                    global $con; 
+                    $ip = getIp();
+                    $pro_id = $_GET['deleteitem'];
+                    $delete_pro = "delete from cart where p_id='$pro_id'";
+                    $run_delete = mysqli_query($con, $delete_pro);
+                    echo "<script>window.open('cart.php','_self')</script>";
+
+                  }
+
+                  if(isset($_GET['addcart'])){
+
+                        global $con; 
+                        
+                        $ip = getIp();
+                        
+                        $p_id = $_GET['addcart'];
+
+                        $check_pro = "select * from cart where ip_add='$ip' AND p_id='$p_id'";
+                        
+                        $run_check = mysqli_query($con, $check_pro); 
+                        
+                        if(mysqli_num_rows($run_check)>0){
+
+                        echo "";
+                        
+                        }
+                        else {
+                        
+                        $insert_pro = "insert into cart values ('$p_id','$ip',1)";
+                        
+                        $run_pro = mysqli_query($con, $insert_pro); 
+                        echo "<script>window.open('cart.php','_self')</script>"; 
+
+                        }      
+                        
+                  }
+
+                    global $con; 
+
+                    $display_cart = "select * from cart";
+                    $run_display_cart = mysqli_query($con, $display_cart);
+
+                    while($row_display = mysqli_fetch_array($run_display_cart)){
+
+                        $pro_id = $row_display['p_id'];
+                        $pro_qty = $row_display['qty'];
+                        $product_info = "select * from products where pro_id = '$pro_id'";
+                        $run_product_info = mysqli_query($con, $product_info);
+                        $row_product_info = mysqli_fetch_array($run_product_info);
+
+                        $pro_title = $row_product_info['pro_title'];
+                        $pro_price = $row_product_info['pro_price'];
+                        $pro_image = $row_product_info['pro_image'];
+
+                        $name_for_qty = 'a'.$pro_id;
+
+                        if(isset($_POST[$name_for_qty])){
+                          $qty = $_POST[$name_for_qty];
+                          global $con;
+                          $ip = getIp();
+                          $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id' and ip_add='$ip'");
+                          $pro_qty = $qty;
+                        } 
+
+                        $sub_total = $pro_price * $pro_qty;
+
+                        $cart_element_qty = mysqli_query($con, "select * from cart where p_id='$pro_id';");
+                        $cart_element_qty = mysqli_fetch_array($cart_element_qty);
+                        $cart_element_qty = $cart_element_qty['qty'];
+
+                        echo "
+                            <tr>
+                                <td class='product-thumbnail'>
+                                  <img src='images/$pro_image' alt='Image' class='img-fluid'>
+                                </td>
+                                <td class='product-name'>
+                                  <h2 class='h5 text-black'>$pro_title</h2>
+                                </td>
+                                <td>$pro_price</td>
+                                <td>
+                                      
+                                      <div class='input-group mb-3' style='max-width: 120px;'>
+                                        <div class='input-group-prepend'>
+                                          <button class='btn btn-outline-primary js-btn-minus' type='button'>&minus;</button>
+                                        </div>
+                                        
+                                        <input type='text' min='0' max='100' class='form-control text-center' name=$name_for_qty id=$name_for_qty value=$cart_element_qty placeholder='' aria-label='Example text with button addon' aria-describedby='button-addon1'>
+                                        
+                                        <div class='input-group-append'>
+                                          <button class='btn btn-outline-primary js-btn-plus' type='button'>&plus;</button>
+                                        </div>
+                                      </div>
+
+                                </td>
+                                
+                                
+                                <td>$sub_total</td>
+                                <td><a href = 'cart.php?deleteitem=$pro_id' class='btn btn-primary height-auto btn-sm'>X</a></td>
+
+                            </tr>
+                        ";
+
+                        
+                         if(isset($_POST[$name_for_qty])){
+                          $qty = $_POST[$name_for_qty];
+                          global $con;
+                          $ip = getIp();
+                          $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id = '$pro_id' and ip_add='$ip'");
+                          $pro_qty = $qty;
+                          } 
+                    }
+
+                    if(isset($_POST['updatecart'])){
+                      global $con;
+                      $ip = getIp();
+                      $qty = $_POST[$name_for_qty];
+
+                      $run_cart_update = mysqli_query($con, "select * from cart where ip_add='$ip'");
+                      while($row_run_cart_update=mysqli_fetch_array($run_cart_update)){
+                          global $con;
+                          $p_id_up = $row_run_cart_update['p_id'];
+                          $name_for_qty1 = 'a'.$p_id_up;
+                          $qty = $_POST[$name_for_qty1];
+                          $update_qty = mysqli_query($con, "update cart set qty='$qty' where p_id='$p_id_up'"); 
+                      }
+                    }
+
+                  ?>
+
+                  <div class="col-md-6">
+                    <div class="row mb-5">
+                      <div class="col-md-6 mb-3 mb-md-0" >
+                        <button type="submit" class="btn btn-primary btn-sm btn-block" name="updatecart" href="cart.php">Update Cart</button> 
+                      </div>
+                    </div>
+                  </div>
+
+                </form>
                   
                 </tbody>
               </table>
@@ -44,13 +186,14 @@ include("functions.php")
           </form>
         </div>
 
-        <?php 
-
-        ?>
 
         <div class="row">
           <div class="col-md-6">
             <div class="row mb-5">
+
+              <!-- <div class="col-md-6 mb-3 mb-md-0" >
+                <button form="myform" type="submit" class="btn btn-primary btn-sm btn-block" name="updatecart" href="cart.php">Update Cart</button> 
+              </div> -->
 
               <div class="col-md-6">
                 <button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location='index.php'">Continue Shopping</button>

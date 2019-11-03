@@ -16,6 +16,12 @@
   </head>
   <body>
 
+    <?php
+
+      $cnt = count_cart();
+
+    ?>
+
   <div class="site-wrap">
     <div class="site-navbar bg-white py-2">
       <div class="search-wrap">
@@ -84,6 +90,7 @@
           <div class="icons">
             <a href="cart.php" class="icons-btn d-inline-block bag">
               <span class="icon-shopping-bag"></span>
+              <span class="number"><?php echo count_cart();?></span>
             </a>
             <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span class="icon-menu"></span></a>
           </div>
