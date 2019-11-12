@@ -84,7 +84,7 @@ include("functions.php");
 
                               <tr>
                                   <td>$pro_title1 <strong class='mx-2'>x</strong> $pro_qty1</td>
-                                  <td>$ $sub_total1</td>
+                                  <td>Rs. $sub_total1</td>
                               </tr>
 
                             ";
@@ -96,11 +96,11 @@ include("functions.php");
  
                       <tr>
                         <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
-                        <td class="text-black">$ <?php echo $total1; ?> </td>
+                        <td class="text-black">Rs. <?php echo $total1; ?> </td>
                       </tr>
                       <tr>
                         <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
-                        <td class="text-black font-weight-bold"><strong>$ <?php echo $total1; ?> </strong></td>
+                        <td class="text-black font-weight-bold"><strong>Rs. <?php echo $total1; ?> </strong></td>
                       </tr>
                     </tbody>
                   </table>

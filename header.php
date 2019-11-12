@@ -81,7 +81,8 @@
                     else {
                       $email = $_SESSION['customer_email'];
                     echo "<li><a href='logout.php' style='color:blue;'>Logout</a></li>";
-                    echo "<li><a style='color:green;'>Hello ".$_SESSION['customer_email']."!</a></li>";
+                    list($str, $rest) =preg_split('/@/', $_SESSION['customer_email'], 2);
+                    echo "<li><a style='color:green;'>Hello ".$str."!</a></li>";
                     }
                 ?>
               </ul>
