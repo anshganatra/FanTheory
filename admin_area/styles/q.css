@@ -1,0 +1,44 @@
+body {
+	background-color:white;
+}
+
+.main_wrapper{
+width:1000px;
+height:auto;
+margin:auto;
+border:5px black;
+}
+
+
+#header {
+	width:1000px;
+	height:120px;
+	background-image:url(../images/bg-header.jpg);
+	border-bottom:5px black;
+}
+
+
+#right {
+width:200px;
+height:800px;
+float:right;
+border-left:5px black;
+background:grey;
+}
+
+#right a {
+text-decoration:none;
+color:white;
+text-align:left;
+font-size:18px;
+font-family:Palatino; 
+padding:6px;
+margin:6px;
+display:block;
+}
+#right a:hover {text-decoration:underline; font-weight:bolder; color:black;}
+
+
+
+
+

@@ -8,7 +8,7 @@ include("functions.php");?>
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.php">Home</a> <span class="mx-2 mb-0">/</span> <a href="cart.php">Cart</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Customer Login</strong></div>
+          <div class="col-md-12 mb-0"><a href="index.php">Home</a> <span class="mx-2 mb-0">/</span> <!-- <a href="cart.php">Cart</a> <span class="mx-2 mb-0">/</span> --> <strong class="text-black">Customer Login</strong></div>
         </div>
       </div>
     </div>
@@ -51,7 +51,16 @@ include("functions.php");?>
         
           $c_email = $_POST['email'];
           $c_pass = $_POST['pass'];
+          $check_c = "select * from customers where c_email='$c_email'";
           
+          $run_c1 = mysqli_query($con, $check_c);
+          
+          $search_customer = mysqli_num_rows($run_c1); 
+          
+          if($search_customer==0){
+            echo "<script>window.open('customer_register.php','_self')</script>";
+          }
+
           $sel_c = "select * from customers where c_pass='$c_pass' AND c_email='$c_email'";
           
           $run_c = mysqli_query($con, $sel_c);
@@ -60,7 +69,7 @@ include("functions.php");?>
           
           if($check_customer==0){
           
-          echo "<script>alert('Password or email is incorrect, plz try again!')</script>";
+          echo "<script>alert('Password is incorrect, please try again!')</script>";
           exit();
           }
           $ip = getIp(); 

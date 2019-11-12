@@ -67,11 +67,11 @@ function getPro(){
 
         echo "
             <div class='col-lg-4 col-md-6 item-entry mb-4'>
-                <a href='#' class='product-item md-height bg-gray d-block'>
+                <a href='shop-single.php?product_id=$pro_id' class='product-item md-height bg-gray d-block'>
                   <img src='images/$pro_image' alt='Image' class='img-fluid'>
                 </a>
                 <h2 class='item-title'><a href='shop-single.php?product_id=$pro_id'>$pro_title</a></h2>
-                <strong class='item-price'>$ $pro_price</strong>
+                <strong class='item-price'>Rs. $pro_price</strong>
             </div>
 
         ";
@@ -107,11 +107,11 @@ function getMoviePro(){
 
         echo "
             <div class='col-lg-4 col-md-6 item-entry mb-4'>
-                <a href='#' class='product-item md-height bg-gray d-block'>
+                <a href='shop-single.php?product_id=$pro_id' class='product-item md-height bg-gray d-block'>
                   <img src='images/$pro_image' alt='Image' class='img-fluid'>
                 </a>
                 <h2 class='item-title'><a href='shop-single.php?product_id=$pro_id'>$pro_title</a></h2>
-                <strong class='item-price'>$ $pro_price</strong>
+                <strong class='item-price'>Rs. $pro_price</strong>
             </div>
 
         ";
@@ -145,11 +145,11 @@ function getTVShowPro(){
 
         echo "
             <div class='col-lg-4 col-md-6 item-entry mb-4'>
-                <a href='#' class='product-item md-height bg-gray d-block'>
+                <a href='shop-single.php?product_id=$pro_id' class='product-item md-height bg-gray d-block'>
                   <img src='images/$pro_image' alt='Image' class='img-fluid'>
                 </a>
                 <h2 class='item-title'><a href='shop-single.php?product_id=$pro_id'>$pro_title</a></h2>
-                <strong class='item-price'>$ $pro_price</strong>
+                <strong class='item-price'>Rs. $pro_price</strong>
             </div>
 
         ";
@@ -183,11 +183,11 @@ function getCatPro(){
 
         echo "
             <div class='col-lg-4 col-md-6 item-entry mb-4'>
-                <a href='#' class='product-item md-height bg-gray d-block'>
+                <a href='shop-single.php?product_id=$pro_id' class='product-item md-height bg-gray d-block'>
                   <img src='images/$pro_image' alt='Image' class='img-fluid'>
                 </a>
                 <h2 class='item-title'><a href='shop-single.php?product_id=$pro_id'>$pro_title</a></h2>
-                <strong class='item-price'>$ $pro_price</strong>
+                <strong class='item-price'>Rs. $pro_price</strong>
             </div>
 
         ";

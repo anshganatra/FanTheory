@@ -1,12 +1,12 @@
 
-<table width="795" align="center" bgcolor="pink"> 
+<table width="795" align="center" > 
 
 	
 	<tr align="center">
 		<td colspan="6"><h2>View All Genre Here</h2></td>
 	</tr>
 	
-	<tr align="center" bgcolor="skyblue">
+	<tr align="center" >
 		<th>Genre ID</th>
 		<th>Genre</th>
 		<th>Genre Category</th>

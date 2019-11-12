@@ -8,14 +8,12 @@ include("includes/db.php");
 <html>
 	<head>
 		<title>Inserting Product</title> 
-		
 	</head>
 	
-<body bgcolor="skyblue">
-
+<body style="background-color:white; ">
 	<form action="insert_product.php" method="post" enctype="multipart/form-data"> 
 		
-		<table align="center" width="795" border="2" bgcolor="#187eae">
+		<table align="center" width="795" border="2" >
 			
 			<tr align="center">
 				<td colspan="7"><h2>Insert New Product Here</h2></td>
@@ -98,7 +96,17 @@ include("includes/db.php");
 		</table>
 	
 	</form>
+<?php include("footer.php"); ?>
 
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
 </body> 
 </html>
 <?php 

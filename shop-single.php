@@ -55,7 +55,7 @@ include("functions.php");?>
             <h2 class="text-black"><?php echo $pro_title ?></h2>
             <p><?php echo $pro_desc ?></p>
 
-            <p><strong class="text-primary h4"><?php echo "$".$pro_price ?></strong></p>
+            <p><strong class="text-primary h4"><?php echo "Rs. ".$pro_price ?></strong></p>
             <div class="mb-1 d-flex">
               <label for="option-sm" class="d-flex mr-3 mb-3">
                 <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>

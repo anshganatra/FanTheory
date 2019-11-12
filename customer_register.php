@@ -294,6 +294,51 @@ include("functions.php");?>
           $c_phone = $_POST['c_phone'];
           $c_pass = $_POST['c_pass'];
           
+          //validations
+        if(empty($c_first_name)){
+          echo "Enter first name";
+        }
+        elseif(!preg_match("/^[a-zA-Z ]*$/", $c_first_name)){
+        echo "No special characters allowed!";
+        }
+        if(empty($c_last_name)){
+          echo "Enter last name";
+        }
+        elseif(!preg_match("/^[a-zA-Z ]*$/", $c_last_name)){
+        echo "No special characters allowed!";
+        }
+        if(empty($c_state)){
+          echo "Enter last name";
+        }
+        elseif(!preg_match("/^[a-zA-Z ]*$/", $c_state)){
+        echo "No special characters allowed!";
+        }
+        if(empty($c_country)){
+          echo "Enter country";
+        }
+        if(empty($c_address)){
+          echo "Enter address";
+        }
+        if (!filter_var($c_email, FILTER_VALIDATE_EMAIL)) {
+          echo "Invalid email format";
+        }if(empty($c_pass)){
+          echo "Enter password";
+        }
+        if(empty($c_phone)){
+        echo "Enter mobile number";
+        }
+        elseif(!preg_match("/^[0-9 ]{10}$/", $c_phone)){
+        echo "Only 10 digits to be used!";
+        }
+        if(empty($c_zip)){
+        $merr = "Enter zipcode";
+        $c++;
+        }
+        elseif(!preg_match("/^[0-9 ]{10}$/", $_POST['mno'])){
+        $merr = "Only 10 digits to be used!";
+        $c++;
+        }
+
            $insert_c = "insert into customers values ('$ip','$c_country','$c_first_name','$c_last_name','$c_address','$c_state','$c_zip','$c_email','$c_phone','$c_pass')";
         
           $run_c = mysqli_query($con, $insert_c); 
