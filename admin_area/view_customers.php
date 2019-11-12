@@ -1,12 +1,12 @@
 
-<table width="795" align="center" bgcolor="pink"> 
+<table width="795" align="center"> 
 
 	
 	<tr align="center">
 		<td colspan="6"><h2>View All Customers Here</h2></td>
 	</tr>
 	
-	<tr align="center" bgcolor="skyblue">
+	<tr align="center">
 		<th>S.N</th>
 		<th>Name</th>
 		<th>Email</th>

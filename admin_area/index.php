@@ -8,36 +8,32 @@ if(!isset($_SESSION['user_email'])){
 else {
 
 ?>
-
+<?php include("header.php"); ?>
 <!DOCTYPE> 
 
 <html>
 	<head>
 		<title>This is Admin Panel</title> 
 		
-	<link rel="stylesheet" href="styles/style.css" media="all" /> 
+	<!-- <link rel="stylesheet" href="styles/q.css" media="all" />  -->
 	</head>
 
 
-<body> 
+<body bgcolor="white"> 
 
 	<div class="main_wrapper">
 	
-	
-		<div id="header"></div>
 		
-		<div id="right">
+		<div id="center">
 		<h2 style="text-align:center;">Manage Content</h2>
-			
-			<a href="index.php?insert_product">Insert New Product</a>
-			<a href="index.php?view_products">View All Products</a>
-			<a href="index.php?insert_cat">Insert New Category</a>
-			<a href="index.php?view_cats">View All Categories</a>
-			<a href="index.php?insert_genre">Insert New Genre</a>
-			<a href="index.php?view_genre">View All Genre</a>
-			<a href="index.php?view_customers">View Customers</a>
-			<a href="logout.php">Admin Logout</a>
-		
+			<a href="index.php?insert_product" class="btn btn-black rounded-0">Insert New Product</a>&nbsp;
+			<a href="index.php?view_products" class="btn btn-black rounded-0">View All Products</a>&nbsp;
+			<a href="index.php?insert_cat" class="btn btn-black rounded-0">Insert New Category</a>&nbsp;
+			<a href="index.php?view_cats" class="btn btn-black rounded-0">View All Categories</a>&nbsp;
+			<a href="index.php?insert_genre" class="btn btn-black rounded-0">Insert New Genre</a>&nbsp;
+			<a href="index.php?view_genre" class="btn btn-black rounded-0">View All Genre</a>&nbsp;
+			<a href="index.php?view_customers" class="btn btn-black rounded-0">View Customers</a>&nbsp;
+			<a href="logout.php" class="btn btn-black rounded-0">Admin Logout</a><br>
 		</div>
 		
 		<div id="left">
@@ -102,7 +98,12 @@ else {
 		</div>
 
 	</div>
-
+	<div style="position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;"></div>
+ 
+    
 
 </body>
 </html>
